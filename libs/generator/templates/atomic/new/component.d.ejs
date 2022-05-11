@@ -1,0 +1,9 @@
+---
+to: <%= h.path.resolve(rootDir, layer, name, `${name}.d.ts`) %>
+unless_exists: true
+---
+export interface <%= h.changeCase.pascal(name) %>Props {
+    testId?: string;
+    children?: JSX.Element;
+    className?: string;
+}

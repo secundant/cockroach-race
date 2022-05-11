@@ -1,0 +1,20 @@
+---
+to: <%= h.path.resolve(rootDir, layer, name, `${name}.tsx`) %>
+unless_exists: true
+---
+import { ForwardedRef, forwardRef } from 'react';
+import clsx from 'clsx';
+import type { <%= h.changeCase.pascal(name) %>Props } from './<%= name %>.d';
+
+export const <%= h.changeCase.pascal(name) %> = forwardRef(
+    (
+        { children, className, testId }: <%= h.changeCase.pascal(name) %>Props,
+        ref: ForwardedRef<HTMLDivElement>,
+    ) => {
+        return (
+            <div ref={ref} data-testid={testId} className={clsx('bg-white', className)}>
+                {children}
+            </div>
+        );
+    },
+);

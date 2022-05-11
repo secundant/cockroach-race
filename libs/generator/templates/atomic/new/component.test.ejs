@@ -1,0 +1,16 @@
+---
+to: <%= h.path.resolve(rootDir, layer, name, `${name}.test.tsx`) %>
+unless_exists: true
+---
+import { render, screen } from '@testing-library/react';
+import { <%= h.changeCase.pascal(name) %> } from './<%= name %>';
+
+describe('<%= layer %>/<%= name %>', () => {
+    test('renders component successfully', () => {
+        render(<<%= h.changeCase.pascal(name) %> testId="test-<%= name %>" />);
+
+        const element = screen.getByTestId("test-<%= name %>");
+
+        expect(element).toBeInTheDocument();
+    });
+});

@@ -1,0 +1,6 @@
+---
+to: <%= h.path.resolve(baseDir, 'ui/index.ts') %>
+inject: true
+append: true
+---
+export { <%= componentName %> } from './<%= component %>';

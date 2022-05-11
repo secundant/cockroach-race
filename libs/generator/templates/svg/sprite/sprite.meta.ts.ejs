@@ -1,0 +1,10 @@
+---
+to: <%= h.path.resolve(output, 'sprite.meta.ts') %>
+force: true
+---
+export type SpriteIconName =
+  <%- iconsIds.map((id => `| "${id}"`)).join('\n  ') %>;
+
+export const SPRITE_NAMES: SpriteIconName[] = [
+  <%- iconsIds.map((id => `"${id}"`)).join(',\n  ') %>
+];

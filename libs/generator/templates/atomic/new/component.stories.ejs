@@ -1,0 +1,31 @@
+---
+to: <%= h.path.resolve(rootDir, layer, name, `${name}.stories.tsx`) %>
+unless_exists: true
+---
+import { Meta, Story } from '@storybook/react/types-6-0';
+import { <%= h.changeCase.pascal(name) %> } from './<%= name %>';
+import type { <%= h.changeCase.pascal(name) %>Props } from './<%= name %>.d';
+
+const csf: Meta = {
+    title: '<%= layer %>/<%= h.changeCase.pascal(name) %>',
+    component: <%= h.changeCase.pascal(name) %>,
+};
+
+export const gallery: Story<<%= h.changeCase.pascal(name) %>Props> = args => (
+    <>
+        <<%= h.changeCase.pascal(name) %> {...args} />
+        <<%= h.changeCase.pascal(name) %> {...args} />
+    </>
+);
+
+gallery.storyName = 'Gallery';
+gallery.args = {};
+
+const Template: Story<<%= h.changeCase.pascal(name) %>Props> = args => <<%= h.changeCase.pascal(name) %> {...args} />;
+
+export const sandbox = Template.bind({});
+
+sandbox.storyName = 'Sandbox';
+sandbox.args = {};
+
+export default csf;

@@ -1,0 +1,6 @@
+---
+to: <%= h.path.resolve(rootDir, layer, 'index.ts') %>
+unless_exists: true
+---
+export { default as <%= h.changeCase.pascal(name) %> } from './<%= name %>';
+export type { <%= h.changeCase.pascal(name) %>Props } from './<%= name %>';
