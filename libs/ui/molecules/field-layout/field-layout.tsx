@@ -1,4 +1,5 @@
 import type { FieldLayoutProps } from './field-layout.d';
+import clsx from 'clsx';
 import { ForwardedRef, forwardRef } from 'react';
 
 export const FieldLayout = forwardRef(
@@ -21,7 +22,7 @@ export const FieldLayout = forwardRef(
           {label}
         </label>
         {children}
-        <div className="mt-2 h-5 text-xs">{description}</div>
+        <div className={clsx('mt-2 h-5 text-xs', invalid && 'text-red-500')}>{description}</div>
       </div>
     );
   }

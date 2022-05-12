@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 
 export interface ButtonProps
   extends SharedHtmlAtomProps,
-    Pick<PropsOf<'button'>, 'onClick' | 'disabled'> {
+    Pick<PropsOf<'button'>, 'onClick' | 'disabled' | 'type'> {
   size?: ButtonSize;
   children?: ReactNode;
   appearance?: ButtonAppearance;

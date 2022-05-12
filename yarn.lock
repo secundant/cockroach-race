@@ -6361,13 +6361,18 @@ __metadata:
     "@types/node": ^17.0.32
     "@types/react": ^17.0.43
     "@types/react-dom": ^17.0.14
+    clsx: ^1.1.1
     config: "workspace:*"
+    effector: ^22.3.0
+    effector-react: ^22.0.6
     generator: "workspace:*"
     hygen: ^6.2.0
     next: ^12.1.6
     next-translate: ^1.4.0
+    patronum: ^1.8.2
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-hook-form: ^7.31.1
     tailwindcss: ^3.0.24
     typescript: ^4.6.4
     ui: "workspace:*"
@@ -7525,6 +7530,23 @@ __metadata:
   version: 1.1.1
   resolution: "ee-first@npm:1.1.1"
   checksum: 1b4cac778d64ce3b582a7e26b218afe07e207a0f9bfe13cc7395a6d307849cfe361e65033c3251e00c27dd060cab43014c2d6b2647676135e18b77d2d05b3f4f
+  languageName: node
+  linkType: hard
+
+"effector-react@npm:^22.0.6":
+  version: 22.0.6
+  resolution: "effector-react@npm:22.0.6"
+  peerDependencies:
+    effector: ^22.0.2
+    react: ">=16.8.0 <19.0.0"
+  checksum: afb8d9a797b8aa52e7172468d8f012d1d93c06028d456ece433f18775def3234e99b3452086687eaeea2f4756606b606ce56b2ed4d5ab5a8e4230f8adaf488a1
+  languageName: node
+  linkType: hard
+
+"effector@npm:^22.3.0":
+  version: 22.3.0
+  resolution: "effector@npm:22.3.0"
+  checksum: a220699e03c680fcb13d8e05cd50b7d6ee7ec054b6b18f6ae87edc1b5599debdebe5dbf60e376e2236b5b30872d4d6388d5f02c64406b632d8f65b769538437f
   languageName: node
   linkType: hard
 
@@ -13212,6 +13234,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"patronum@npm:^1.8.2":
+  version: 1.8.2
+  resolution: "patronum@npm:1.8.2"
+  peerDependencies:
+    effector: ^22.1.2
+  checksum: 373984eb1e2c9765058ea60795fab2bd1472b0a396cf5688195aa6fe484be227ba0905438e3afdfe024bfe814f569817ceab93edfba0f9bd1782a53fb832e9aa
+  languageName: node
+  linkType: hard
+
 "pbkdf2@npm:^3.0.3":
   version: 3.1.2
   resolution: "pbkdf2@npm:3.1.2"
@@ -13981,6 +14012,15 @@ __metadata:
     react: ^16.6.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
   checksum: 7ca7e47f8af14ea186688b512a87ab912bf6041312b297f92516341b140b3f0f8aedf5a44d226d99e69ed067b0cc106e38aeb9c9b738ffcc63d10721c844db90
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^7.31.1":
+  version: 7.31.1
+  resolution: "react-hook-form@npm:7.31.1"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: c387f81f0a740b610a601e06e148fce1abd466d353c9a5fd05253644d47270b69c8a0278cdc0f28a3adf5bef2c510adb4bcf37269892dc596750af8e8d062fb1
   languageName: node
   linkType: hard
 
