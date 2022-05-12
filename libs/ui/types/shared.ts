@@ -1,10 +1,13 @@
-export interface ISharedTestProps {
+import { AriaRole } from 'react';
+
+export interface SharedTestProps {
   testId?: string;
 }
 
-export interface ISharedHtmlElementProps {
+export interface SharedHtmlElementProps {
   id?: string;
+  role?: AriaRole;
   className?: string;
 }
 
-export interface ISharedHtmlAtomProps extends ISharedHtmlElementProps, ISharedTestProps {}
+export interface SharedHtmlAtomProps extends SharedHtmlElementProps, SharedTestProps {}

@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .button {
+        @apply flex flex-row items-center justify-center outline-none transition border;
+
+        &:disabled {
+            @apply bg-control-disabled text-text-disabled;
+        }
+
+        &:not(:disabled):active {
+            transform: scale(0.96);
+        }
+    }
+
+    .truncate-container {
+        &,
+        & > * {
+            @apply truncate;
+        }
+    }
+
+    .input-base {
+        @apply transition rounded-s border border-control-border bg-white text-text-primary;
+
+        &[aria-disabled="true"] {
+            @apply bg-control-disabled border-control-disabled text-disabled;
+        }
+
+        &::placeholder {
+            @apply text-text-disabled;
+        }
+    }
+
+    .flex-grid-container {
+        --flex-grid-spacing: 0;
+        --flex-grid-spacing-px: calc(var(--flex-grid-spacing) * theme('spacing.1'));
+
+        display: flex;
+        flex-flow: row wrap;
+        margin: 0 calc(-1 * var(--flex-grid-spacing-px)) calc(-1 * var(--flex-grid-spacing-px)) 0;
+    }
+
+    .flex-grid-item {
+        --flex-grid-item-size: 0;
+
+        flex: 0 0 calc(100% * (var(--flex-grid-item-size) / 12));
+        padding: 0 var(--flex-grid-spacing-px) var(--flex-grid-spacing-px) 0;
+    }
+}
