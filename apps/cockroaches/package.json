@@ -2,6 +2,8 @@
   "name": "cockroaches",
   "packageManager": "yarn@3.2.0",
   "scripts": {
+    "g": "HYGEN_TMPLS=../../libs/generator/templates hygen",
+    "g:fsd": "yarn g fsd --root-dir .",
     "sync-icons": "cp -r ../../libs/ui/molecules/sprite-icon/sprite.svg public/sprite.svg",
     "dev": "next dev",
     "build": "next build",

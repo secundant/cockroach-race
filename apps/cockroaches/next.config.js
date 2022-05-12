@@ -1,4 +1,5 @@
 const { createNextConfig, env } = require('config/next');
+const nextTranslate = require('next-translate');
 
 /**
  * @type {import('next').NextConfig}
@@ -16,7 +17,8 @@ module.exports = createNextConfig(
     analyzer: {
       enabled: env.bool('ANALYZE'),
       detailed: true
-    }
+    },
+    plugins: [nextTranslate]
   },
   configuration
 );

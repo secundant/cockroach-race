@@ -19,7 +19,13 @@ module.exports = {
     bool: createEnvFn(p => p === 'true', { defaultFallback: false })
   },
   createNextConfig(
-    { cwd, workspaceDependencies = [], analyzer: { enabled, detailed } = {}, logSettings },
+    {
+      cwd,
+      workspaceDependencies = [],
+      analyzer: { enabled, detailed } = {},
+      logSettings,
+      plugins = []
+    },
     configuration = {}
   ) {
     log.info(
@@ -42,7 +48,8 @@ module.exports = {
         withBundleAnalyzer({
           enabled
         }),
-        withTranspileModules(workspaceDependencies)
+        withTranspileModules(workspaceDependencies),
+        ...plugins
       ],
       {
         swcMinify: false,
