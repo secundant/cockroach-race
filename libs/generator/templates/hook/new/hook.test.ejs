@@ -1,0 +1,28 @@
+---
+to: <%= h.path.resolve(rootDir, name, `${name}.test.ts`) %>
+unless_exists: true
+---
+import { renderHook, act } from '@testing-library/react-hooks';
+import { <%= h.changeCase.camel(name) %> } from './<%= name %>';
+
+describe('hooks/<%= name %>', () => {
+    test('should increment counter', () => {
+        const { result } = renderHook(() => <%= h.changeCase.camel(name) %>())
+
+        act(() => {
+            result.current.increment()
+        })
+
+        expect(result.current.count).toBe(1)
+    });
+
+    test('should increment counter', () => {
+        const { result } = renderHook(() => <%= h.changeCase.camel(name) %>({ initialCount: 10 }))
+
+        act(() => {
+            result.current.decrement()
+        })
+
+        expect(result.current.count).toBe(9)
+    })
+});

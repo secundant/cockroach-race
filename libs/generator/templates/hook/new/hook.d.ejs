@@ -1,0 +1,14 @@
+---
+to: <%= h.path.resolve(rootDir, name, `${name}.d.ts`) %>
+unless_exists: true
+---
+export interface <%= h.changeCase.pascal(name) %>Params {
+    initialCount?: number;
+}
+
+export interface <%= h.changeCase.pascal(name) %>Result {
+    count: number;
+    setCount(value: number): void;
+    decrement(): void;
+    increment(): void;
+}

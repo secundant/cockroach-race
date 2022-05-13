@@ -1,0 +1,10 @@
+---
+to: <%= h.path.resolve(rootDir, 'index.ts') %>
+inject: true
+append: true
+skip_if: "from './<%= name %>'"
+---
+// Exports: <%= name %>
+
+export { default as <%= h.changeCase.camel(name) %> } from './<%= name %>';
+export type { <%= h.changeCase.pascal(name) %>Params, <%= h.changeCase.pascal(name) %>Result } from './<%= name %>';

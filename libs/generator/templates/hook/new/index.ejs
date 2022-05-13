@@ -1,0 +1,6 @@
+---
+to: <%= h.path.resolve(rootDir, name, 'index.ts') %>
+unless_exists: true
+---
+export type { <%= h.changeCase.pascal(name) %>Params, <%= h.changeCase.pascal(name) %>Result } from './<%= name %>.d';
+export { <%= h.changeCase.camelCase(name) %> as default } from './<%= name %>';
