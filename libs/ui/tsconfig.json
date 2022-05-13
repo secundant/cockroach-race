@@ -5,5 +5,5 @@
     "rootDir": "."
   },
   "exclude": ["node_modules"],
-  "include": ["types/react-patch.d.ts", "./**/*.ts", "./**/*.tsx"]
+  "include": ["types/react-patch.d.ts", "types/css-modules.d.ts", "./**/*.ts", "./**/*.tsx"]
 }

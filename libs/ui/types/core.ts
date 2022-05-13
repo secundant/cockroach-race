@@ -5,6 +5,8 @@ import {
   JSXElementConstructor
 } from 'react';
 
+export type Nil = null | void | undefined;
+
 export type RefOf<C extends ElementType> = ComponentPropsWithRef<C>['ref'];
 
 export type HTMLElementType = keyof JSX.IntrinsicElements;

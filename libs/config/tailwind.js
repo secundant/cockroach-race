@@ -7,7 +7,10 @@ module.exports = {
    */
   createTailwindConfig({ externals = [] }) {
     return {
-      content: ['.', ...externals].flatMap(prefix => `${prefix}/**/*.{ts,tsx,mdx}`),
+      content: ['.', ...externals].flatMap(prefix => [
+        `${prefix}/**/*.{ts,tsx,mdx}`,
+        `${prefix}/**/*.module.css`
+      ]),
       theme: {
         fontSize: {
           xs: '12px',
@@ -41,6 +44,10 @@ module.exports = {
         extend: {
           spacing: {
             13: '52px'
+          },
+          transitionDuration: {
+            'entering-screen': '225ms',
+            'leaving-screen': '195ms'
           }
         }
       },

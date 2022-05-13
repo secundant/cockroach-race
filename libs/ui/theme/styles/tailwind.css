@@ -8,6 +8,8 @@
   }
 }
 
+/* TODO Setup files splitting */
+
 @layer components {
   .button-base {
     @apply flex flex-row items-center justify-center outline-none transition rounded-lg;
@@ -18,6 +20,47 @@
 
     &:not(:disabled):active {
       transform: scale(0.96);
+    }
+  }
+
+  .transition-base {
+    &[data-transition-type="fade"] {
+      @apply opacity-0 transition-opacity ease-in duration-entering-screen;
+
+      &[data-transition-status="entering"],
+      &[data-transition-status="entered"] {
+        @apply opacity-100;
+      }
+
+      &[data-transition-status="exiting"] {
+        @apply ease-out duration-leaving-screen;
+      }
+    }
+
+    &[data-transition-type="grow"] {
+      --duration: calc(theme('transitionDuration.entering-screen') * 1.75);
+
+      opacity: 0;
+      transform: scale(0.75, 0.5625);
+      transition:
+        opacity var(--duration) theme('transitionTimingFunction.in-out') 0ms,
+        transform calc(var(--duration) * 0.666) theme('transitionTimingFunction.in-out') 0ms;
+
+      &[data-transition-status="entering"] {
+        @apply opacity-100 scale-100;
+      }
+
+      &[data-transition-status="entered"] {
+        @apply opacity-100 transform-none;
+      }
+
+      &[data-transition-status="exiting"] {
+        --duration: calc(theme('transitionDuration.leaving-screen') * 1.75);
+
+        transition:
+          opacity var(--duration) theme('transitionTimingFunction.in-out') 0ms,
+          transform calc(var(--duration) * 0.666) theme('transitionTimingFunction.in-out') calc(var(--duration) * 0.333);
+      }
     }
   }
 }
