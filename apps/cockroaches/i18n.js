@@ -5,5 +5,6 @@ module.exports = {
   pages: {
     '*': ['common'],
     '/auth': ['auth']
-  }
+  },
+  logger: () => void 0
 };

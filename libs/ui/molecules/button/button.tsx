@@ -39,7 +39,7 @@ export const Button = forwardRef(
 const interactive: Record<ButtonAppearance, string> = {
   flat: clsx('bg-gray-200 hover:bg-gray-400 active:bg-gray-400 text-black'),
   accent: clsx('bg-accent-500 hover:bg-accent-600 active:bg-accent-600 text-white'),
-  outline: clsx('border border-black bg-white hover:bg-gray-100 active:bg-gray-100')
+  outline: clsx('text-accent-500 border border-black bg-white hover:bg-gray-100 active:bg-gray-100')
 };
 const sizes = {
   sm: 'h-8 text-xs px-2',

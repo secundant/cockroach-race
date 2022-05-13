@@ -3,16 +3,14 @@ import clsx from 'clsx';
 import useTranslation from 'next-translate/useTranslation';
 import { memo } from 'react';
 import { useForm } from 'react-hook-form';
-import { Button, FieldLayout, Input } from 'ui/molecules';
+import { Button, Input } from 'ui/molecules';
 import { PropsOf } from 'ui/types';
+import { Form } from '@/shared/ui/atoms';
+import { Field } from '@/shared/ui/molecules';
 
 export const AuthForm = memo(({ className }: Pick<PropsOf<'form'>, 'className'>) => {
   const { t } = useTranslation('auth');
-  const {
-    register,
-    handleSubmit,
-    formState: { isSubmitting, errors }
-  } = useForm({
+  const form = useForm({
     defaultValues: {
       name: '',
       password: ''
@@ -20,55 +18,28 @@ export const AuthForm = memo(({ className }: Pick<PropsOf<'form'>, 'className'>)
   });
 
   return (
-    <form
-      onSubmit={handleSubmit(model.logInFx)}
+    <Form
+      form={form}
+      onSubmit={model.logInFx}
       className={clsx('space-y-4 block', className)}
       autoComplete="off"
     >
-      <FieldLayout
-        label={t('name.label')}
-        htmlFor="name"
-        description={errors.name?.message}
-        invalid={Boolean(errors.name)}
-      >
-        <Input
-          id="name"
-          placeholder={t('name.placeholder')}
-          invalid={Boolean(errors.name)}
-          autoComplete="off"
-          className="w-full"
-          {...register('name', {
-            required: t('name.errors.required'),
-            minLength: {
-              value: 2,
-              message: t('name.errors.minLength', { count: 2 })
-            }
-          })}
-        />
-      </FieldLayout>
+      <Field t={t} name="name" required minLength={2}>
+        <Input className="w-full" />
+      </Field>
 
-      <FieldLayout
-        label={t('password.label')}
-        htmlFor="password"
-        description={errors.password?.message}
-        invalid={Boolean(errors.password)}
-      >
-        <Input
-          id="password"
-          type="password"
-          autoComplete="off"
-          placeholder={t('password.placeholder')}
-          invalid={Boolean(errors.password)}
-          className="w-full"
-          {...register('password', {
-            required: t('password.errors.required')
-          })}
-        />
-      </FieldLayout>
+      <Field t={t} name="password" required minLength={2}>
+        <Input type="password" className="w-full" />
+      </Field>
 
-      <Button type="submit" appearance="accent" className="mx-auto" disabled={isSubmitting}>
+      <Button
+        type="submit"
+        appearance="accent"
+        className="mx-auto"
+        disabled={form.formState.isSubmitting}
+      >
         {t('submit')}
       </Button>
-    </form>
+    </Form>
   );
 });

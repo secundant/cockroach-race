@@ -1,1 +1,11 @@
-{}
+{
+  "form": {
+    "placeholder": {
+      "default": "Введите значение"
+    },
+    "errors": {
+      "required": "Поле обязательно",
+      "minLength": "Минимальная длина {{count}}"
+    }
+  }
+}

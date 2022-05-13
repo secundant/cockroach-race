@@ -1,9 +1,9 @@
 {
-    "extends": "config/ts/base.json",
-    "compilerOptions": {
-        "baseUrl": ".",
-        "rootDir": "."
-    },
-    "exclude": ["node_modules"],
-    "include": ["./**/*.ts", "./**/*.tsx"]
+  "extends": "config/ts/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "."
+  },
+  "exclude": ["node_modules"],
+  "include": ["types/react-patch.d.ts", "./**/*.ts", "./**/*.tsx"]
 }

@@ -1,1 +1,11 @@
-{}
+{
+  "form": {
+    "placeholder": {
+      "default": "Enter value"
+    },
+    "errors": {
+      "required": "Required",
+      "minLength": "Length should be greater than {{count}}"
+    }
+  }
+}
