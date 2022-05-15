@@ -5,7 +5,7 @@
     "g": "HYGEN_TMPLS=../../libs/generator/templates hygen",
     "g:ui": "yarn g atomic --root-dir shared/ui",
     "g:fsd": "yarn g fsd --root-dir .",
-    "sync-icons": "cp -r ../../libs/ui/molecules/sprite-icon/sprite.svg public/sprite.svg",
+    "sync-icons": "cp -r ../../libs/ui/atoms/icon/sprite.svg public/sprite.svg",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

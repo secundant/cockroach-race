@@ -2,7 +2,14 @@
 to: <%= h.path.resolve(rootDir, layer, 'index.ts') %>
 inject: true
 append: true
-skip_if: "from './<%= name %>'"
+skip_if: "atomic:re-export:<%= name %>"
 ---
+
+// atomic:re-export:<%= name %>
+// atomic:re-export:<%= name %>:component
+
 export { default as <%= h.changeCase.pascal(name) %> } from './<%= name %>';
+
+// atomic:re-export:<%= name %>:types
+
 export type { <%= h.changeCase.pascal(name) %>Props } from './<%= name %>';

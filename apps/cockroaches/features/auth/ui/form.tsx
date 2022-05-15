@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import useTranslation from 'next-translate/useTranslation';
 import { memo } from 'react';
 import { useForm } from 'react-hook-form';
-import { Button, Input } from 'ui/molecules';
+import { Button, Input, Select } from 'ui/molecules';
 import { PropsOf } from 'ui/types';
 import { Form } from '@/shared/ui/atoms';
 import { Field } from '@/shared/ui/molecules';
@@ -30,6 +30,10 @@ export const AuthForm = memo(({ className }: Pick<PropsOf<'form'>, 'className'>)
 
       <Field t={t} name="password" required minLength={2}>
         <Input type="password" className="w-full" />
+      </Field>
+
+      <Field t={t} name="kek">
+        <Select data={[{ value: 'a', label: 'A label' }]} value="a" />
       </Field>
 
       <Button

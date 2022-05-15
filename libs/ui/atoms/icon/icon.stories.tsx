@@ -1,18 +1,18 @@
-import { SpriteIcon } from './sprite-icon';
-import type { SpriteIconProps } from './sprite-icon.d';
+import { Icon } from './icon';
+import type { IconProps } from './icon.d';
 import { SPRITE_NAMES } from './sprite.meta';
 import { Meta, Story } from '@storybook/react/types-6-0';
 
 const csf: Meta = {
-  title: 'molecules/SpriteIcon',
-  component: SpriteIcon
+  title: 'atoms/Icon',
+  component: Icon
 };
 
-export const gallery: Story<SpriteIconProps> = args => (
+export const gallery: Story<IconProps> = args => (
   <div className="flex">
     {SPRITE_NAMES.map(name => (
       <div key={name} className="text-6xl m-4 p-6 rounded-lg bg-gray-100 text-cyan-700">
-        <SpriteIcon {...args} name={name} />
+        <Icon {...args} name={name} />
       </div>
     ))}
   </div>
@@ -21,7 +21,7 @@ export const gallery: Story<SpriteIconProps> = args => (
 gallery.storyName = 'Gallery';
 gallery.args = {};
 
-const Template: Story<SpriteIconProps> = args => <SpriteIcon {...args} />;
+const Template: Story<IconProps> = args => <Icon {...args} />;
 
 export const sandbox = Template.bind({});
 

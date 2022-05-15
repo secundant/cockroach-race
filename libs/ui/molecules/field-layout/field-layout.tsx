@@ -18,7 +18,11 @@ export const FieldLayout = forwardRef(
   ) => {
     return (
       <div ref={ref} data-testid={testId} {...props}>
-        <label id={htmlFor && `${htmlFor}-label`} htmlFor={htmlFor} className="block text-lg mb-3">
+        <label
+          id={htmlFor && `${htmlFor}-label`}
+          htmlFor={htmlFor}
+          className="block text-base mb-2 tracking-wide"
+        >
           {label}
         </label>
         {children}

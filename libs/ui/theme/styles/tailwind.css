@@ -6,6 +6,18 @@
   html {
     font-family: Inter, Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
+
+  input {
+    @apply indent-4;
+
+    &:not(:disabled) {
+      @apply text-black placeholder-gray-400;
+    }
+
+    &:disabled {
+      @apply text-gray-400 placeholder-gray-200;
+    }
+  }
 }
 
 /* TODO Setup files splitting */
@@ -20,6 +32,22 @@
 
     &:not(:disabled):active {
       transform: scale(0.96);
+    }
+  }
+
+  .input-base {
+    @apply transition-all rounded-lg border outline-none outline-offset-0;
+
+    &[aria-disabled="true"] {
+      @apply border-gray-400 bg-gray-100 text-gray-400;
+    }
+
+    &:not([aria-disabled="true"]) {
+      @apply bg-white text-black;
+
+      &:not(.input-focused):not(:focus):not([aria-invalid="true"]) {
+        @apply border-gray-400 hover:border-black;
+      }
     }
   }
 
@@ -62,5 +90,27 @@
           transform calc(var(--duration) * 0.666) theme('transitionTimingFunction.in-out') calc(var(--duration) * 0.333);
       }
     }
+  }
+}
+
+@layer utilities {
+  .focus-ring {
+    @apply outline outline-2 outline-offset-2 outline-accent-500;
+  }
+
+  .input-focused {
+    @apply outline-1;
+
+    &:not(.input-invalid) {
+      @apply border-accent-500 outline-accent-500;
+    }
+
+    &.input-invalid {
+      @apply outline-red-500;
+    }
+  }
+
+  .input-invalid {
+    @apply border-red-500;
   }
 }

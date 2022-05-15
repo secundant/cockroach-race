@@ -23,7 +23,7 @@ export const Button = forwardRef(
         disabled={disabled}
         aria-disabled={disabled}
         className={clsx(
-          'button-base',
+          'button-base focus-visible:focus-ring',
           !disabled && interactive[appearance],
           sizes[size],
           className

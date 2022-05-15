@@ -7,7 +7,7 @@
     "g": "HYGEN_TMPLS=../generator/templates hygen",
     "g:ui": "yarn g atomic --root-dir . new",
     "g:hook": "yarn g hook --root-dir hooks new",
-    "g:icons": "yarn g svg sprite --silent --input molecules/sprite-icon/source --output molecules/sprite-icon/"
+    "g:icons": "yarn g svg sprite --silent --input atoms/icon/source --output atoms/icon/"
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.5",
