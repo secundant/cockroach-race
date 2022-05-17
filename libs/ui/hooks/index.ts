@@ -18,3 +18,24 @@ export type { UseEventCallbackParams, UseEventCallbackResult } from './use-event
 // Exports: use-universal-layout-effect
 
 export { default as useUniversalLayoutEffect } from './use-universal-layout-effect';
+// Exports: use-portal
+
+export { default as usePortal } from './use-portal';
+export type { UsePortalParams, UsePortalResult } from './use-portal';
+
+// Exports: use-focus-return
+
+export { default as useFocusReturn } from './use-focus-return';
+export type { UseFocusReturnParams, UseFocusReturnResult } from './use-focus-return';
+
+// Exports: use-focus-trap
+
+export { default as useFocusTrap } from './use-focus-trap';
+export type { UseFocusTrapParams, UseFocusTrapResult } from './use-focus-trap';
+
+// Exports: use-scroll-lock
+
+export { default as useScrollLock } from './use-scroll-lock';
+// Exports: use-merge-callback
+
+export { default as useMergeCallback } from './use-merge-callback';

@@ -5,7 +5,7 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "g": "HYGEN_TMPLS=../generator/templates hygen",
-    "g:ui": "yarn g atomic --root-dir . new",
+    "g:ui": "yarn g atomic --root-dir .",
     "g:hook": "yarn g hook --root-dir hooks new",
     "g:icons": "yarn g svg sprite --silent --input atoms/icon/source --output atoms/icon/"
   },
@@ -22,7 +22,7 @@
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/react": "^6.4.19",
-    "@testing-library/react": "^13.2.0",
+    "@testing-library/react": "^12.1.5",
     "@testing-library/react-hooks": "^8.0.0",
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.40",

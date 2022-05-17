@@ -14,3 +14,11 @@ export { default as Select } from './select';
 // atomic:re-export:select:types
 
 export type { SelectProps } from './select';
+// atomic:re-export:popover
+// atomic:re-export:popover:component
+
+export { default as Popover } from './popover';
+
+// atomic:re-export:popover:types
+
+export type { PopoverProps } from './popover';

@@ -23,6 +23,10 @@
 /* TODO Setup files splitting */
 
 @layer components {
+  .overlay {
+    @apply fixed inset-0;
+  }
+
   .button-base {
     @apply flex flex-row items-center justify-center outline-none transition rounded-lg;
 
