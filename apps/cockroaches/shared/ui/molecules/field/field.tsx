@@ -47,7 +47,7 @@ export const Field = memo(
             `fields.${name}.placeholder`,
             {},
             {
-              fallback: commonT('form.placeholder')
+              fallback: commonT('form.placeholder.default')
             }
           ),
           ...field

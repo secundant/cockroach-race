@@ -7,5 +7,12 @@
       "required": "Поле обязательно",
       "minLength": "Минимальная длина {{count}}"
     }
+  },
+  "cockroachType": {
+    "american": "Американский",
+    "faster": "Быстролап",
+    "fielder": "Полевой",
+    "sprinter": "Спринтер",
+    "turkish": "Турецкий"
   }
 }

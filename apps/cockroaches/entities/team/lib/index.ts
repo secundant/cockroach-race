@@ -1,1 +1,1 @@
-export const getValidCount = (value: number) => Math.max(0, value);
+export type { CockroachType, Cockroach } from './types';
