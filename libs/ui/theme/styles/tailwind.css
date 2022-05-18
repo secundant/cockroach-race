@@ -27,6 +27,10 @@
     @apply fixed inset-0;
   }
 
+  .touchable:not([aria-disabled="true"]):active {
+    transform: scale(0.96);
+  }
+
   .button-base {
     @apply flex flex-row items-center justify-center outline-none transition rounded-lg;
 

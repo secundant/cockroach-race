@@ -8,6 +8,7 @@ export interface SelectProps
     > {
   data: SelectOption[];
   value?: SelectValue;
+  invalid?: boolean;
   onChange?(value: SelectValue): void;
 }
 

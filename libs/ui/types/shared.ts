@@ -1,4 +1,4 @@
-import { AriaRole } from 'react';
+import { AriaRole, CSSProperties } from 'react';
 
 export interface SharedTestProps {
   testId?: string;
@@ -7,6 +7,7 @@ export interface SharedTestProps {
 export interface SharedHtmlElementProps {
   id?: string;
   role?: AriaRole;
+  style?: CSSProperties;
   className?: string;
 }
 

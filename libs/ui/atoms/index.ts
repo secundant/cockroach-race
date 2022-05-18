@@ -29,3 +29,11 @@ export { default as OverlayInvisible } from './overlay-invisible';
 // atomic:re-export:overlay-invisible:types
 
 export type { OverlayInvisibleProps } from './overlay-invisible';
+// atomic:re-export:list-item
+// atomic:re-export:list-item:component
+
+export { default as ListItem } from './list-item';
+
+// atomic:re-export:list-item:types
+
+export type { ListItemProps } from './list-item';

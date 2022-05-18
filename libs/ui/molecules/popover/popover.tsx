@@ -119,7 +119,7 @@ export const Popover = forwardRef(
               ref={paperForkRef}
               className={clsx(
                 'overflow-x-hidden shadow-el-lg overflow-y-auto absolute outline-none bg-white/95 backdrop-blur-sm',
-                'min-w-[16px] min-h-[16px] max-w-[calc(100%-32px)] max-h-[calc(100%-32px)]',
+                'min-w-[16px] min-h-[16px] max-w-[calc(100%-32px)] max-h-[calc(100%-32px)] rounded-lg',
                 className
               )}
               {...props}
@@ -139,6 +139,6 @@ const defaultAnchorOrigin: PopoverOrigin = {
   horizontal: 'center'
 };
 const defaultTransformOrigin: PopoverOrigin = {
-  vertical: 'center',
+  vertical: 'start',
   horizontal: 'center'
 };

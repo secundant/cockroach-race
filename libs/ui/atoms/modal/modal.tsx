@@ -18,10 +18,10 @@ export const Modal = forwardRef(
     const [exited, setExited] = useState(true);
     const visible = transition ? !exited : !!open;
 
-    const trapRef = useFocusTrap(!exited);
+    const trapRef = useFocusTrap(visible);
     const childrenRef = useForkChildrenRef(children, trapRef);
 
-    useScrollLock(!exited);
+    useScrollLock(visible);
     useFocusReturn({
       active: open
     });
