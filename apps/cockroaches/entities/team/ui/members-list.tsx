@@ -25,5 +25,11 @@ export const TeamMembersList = memo(() => {
     getKey: item => item.id
   });
 
-  return <div className="space-y-6">{empty ? t('teamIsEmpty') : membersListNode}</div>;
+  return empty ? (
+    <div className="h-1/2 text-center flex items-end justify-center text-lg">
+      {t('teamIsEmpty')}
+    </div>
+  ) : (
+    <div className="space-y-6">{membersListNode}</div>
+  );
 });

@@ -2,7 +2,7 @@
 to: <%= h.path.resolve(baseDir, 'model/index.ts') %>
 ---
 import { createStore, createEvent } from 'effector';
-import { getValidCount } from '../lib';
+<%- parts.includes('lib') ? `import { getValidCount } from '../lib';` : '' %>
 
 export const increment = createEvent();
 export const decrement = createEvent();
@@ -10,3 +10,5 @@ export const decrement = createEvent();
 export const $counter = createStore(0)
     .on(increment, prev => getValidCount(prev + 1))
     .on(decrement, prev => getValidCount(prev - 1));
+
+<%- parts.includes('lib') ? '' : 'const getValidCount = (value: number) => Math.max(0, value);' %>

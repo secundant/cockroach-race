@@ -1,0 +1,8 @@
+---
+to: "<%= parts.includes('types') ? h.path.resolve(baseDir, 'types.ts') : null %>"
+---
+export type <%= h.changeCase.pascal(name) %>Id = string | number;
+export interface <%= h.changeCase.pascal(name) %> {
+    id: <%= h.changeCase.pascal(name) %>Id;
+    name: string;
+}

@@ -5,10 +5,18 @@ export const logInFx = createEffect(
   (_: { name: string; password: string }) =>
     new Promise(r => setTimeout(() => r('ok'), 100 + 300 * Math.random()))
 );
+export const logOutFx = createEffect(
+  () => new Promise(r => setTimeout(() => r('ok'), 100 + 300 * Math.random()))
+);
 
-const redirectFx = createEffect(() => Router.push('/'));
+const redirectToHomeFx = createEffect(() => Router.push('/'));
+const redirectToLoginPageFx = createEffect(() => Router.push('/auth'));
 
 sample({
   clock: logInFx.done,
-  target: redirectFx
+  target: redirectToHomeFx
+});
+sample({
+  clock: logOutFx.done,
+  target: redirectToLoginPageFx
 });

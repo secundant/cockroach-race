@@ -12,5 +12,9 @@ export const AddMemberButton = memo(() => {
 
   if (teamIsFull) return null;
 
-  return <Button onClick={handleClick}>{t('addMember')}</Button>;
+  return (
+    <Button className="w-full text-center" onClick={handleClick}>
+      {t('addMember')}
+    </Button>
+  );
 });

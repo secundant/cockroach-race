@@ -39,3 +39,6 @@ export { default as useScrollLock } from './use-scroll-lock';
 // Exports: use-merge-callback
 
 export { default as useMergeCallback } from './use-merge-callback';
+// Exports: use-id
+
+export { default as useId } from './use-id';

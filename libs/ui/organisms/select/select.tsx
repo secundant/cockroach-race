@@ -1,5 +1,5 @@
 import { Icon, ListItem } from '../../atoms';
-import { useEventCallback } from '../../hooks';
+import { useEventCallback, useId } from '../../hooks';
 import { Popover } from '../../molecules';
 import type { SelectProps, SelectValue } from './select.d';
 import clsx from 'clsx';
@@ -8,6 +8,7 @@ import React, { ForwardedRef, forwardRef, useMemo, useRef, useState } from 'reac
 export const Select = forwardRef(
   (
     {
+      id: idProp,
       className,
       testId,
       data,
@@ -21,6 +22,7 @@ export const Select = forwardRef(
     }: SelectProps,
     ref: ForwardedRef<HTMLInputElement>
   ) => {
+    const id = useId(idProp);
     const rootRef = useRef<HTMLDivElement>(null);
     const [open, setOpen] = useState(false);
     const [focused, setFocused] = useState(false);
@@ -60,12 +62,16 @@ export const Select = forwardRef(
       <>
         <div
           role="combobox"
+          aria-haspopup="listbox"
+          aria-expanded={expanded}
+          aria-disabled={disabled}
+          aria-controls={id}
+          aria-invalid={invalid}
+          aria-owns={`${id}-items`}
           ref={rootRef}
           onClick={handleClick}
           onKeyDown={handleKeyDown}
           data-testid={testId}
-          data-invalid={invalid}
-          data-disabled={disabled}
           className={clsx(
             'input-base flex overflow-hidden h-13 text-sm items-center',
             (expanded || focused) && 'input-focused',
@@ -73,9 +79,13 @@ export const Select = forwardRef(
           )}
         >
           <input
+            id={id}
             ref={ref}
             className="flex-1 outline-none"
             readOnly
+            autoComplete="nope"
+            aria-disabled={disabled}
+            aria-controls={expanded ? `${id}-items` : void 0}
             onFocus={handleFocus}
             onBlur={handleBlur}
             defaultValue={selected?.label}
@@ -91,6 +101,9 @@ export const Select = forwardRef(
           />
         </div>
         <Popover
+          id={`${id}-items`}
+          aria-labelledby={`${id}-label`}
+          role="listbox"
           open={expanded}
           anchorNode={rootRef.current}
           onClose={() => setOpen(false)}

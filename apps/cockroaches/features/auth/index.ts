@@ -5,6 +5,7 @@ import * as AuthModel from './model';
 
 export {
   // FSD:UI:EXPORT
+  AuthLogout,
   AuthForm
 } from './ui';
 

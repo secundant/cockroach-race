@@ -1,4 +1,4 @@
 ---
-to: <%= h.path.resolve(baseDir, 'lib/index.ts') %>
+to: "<%= parts.includes('lib') ? h.path.resolve(baseDir, 'lib/index.ts') : null %>"
 ---
 export const getValidCount = (value: number) => Math.max(0, value);

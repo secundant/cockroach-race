@@ -27,11 +27,11 @@ export const ChangeLanguageButton = memo(() => {
         className="p-2 space-y-2"
         anchorOrigin={{
           vertical: 'start',
-          horizontal: 'start'
+          horizontal: 'center'
         }}
         transformOrigin={{
           vertical: 'center',
-          horizontal: 'start'
+          horizontal: 'center'
         }}
       >
         <ListItem selected={router.locale === 'ru'} onClick={() => handleSelect('ru')}>

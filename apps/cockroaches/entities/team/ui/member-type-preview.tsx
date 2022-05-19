@@ -12,7 +12,7 @@ export const MemberTypePreview = memo(() => {
       className="flex items-center justify-center text-[120px] md:text-[240px]"
       style={{ color: member.color }}
     >
-      <Icon name={member.type} />
+      <Icon name={member.type} className="w-full aspect-square h-auto" />
     </div>
   );
 });

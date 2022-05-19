@@ -1,0 +1,6 @@
+---
+to: "<%= parts.includes('api') ? h.path.resolve(baseDir, 'api.ts') : null %>"
+---
+export const <%= h.changeCase.pascal(name) %>Api = {
+    getAll: () => fetch('/<%= name %>').then(response => response.json())
+};

@@ -16,6 +16,13 @@ module.exports = {
         message: 'Slice name',
         result: h.changeCase.kebab,
         validate: value => value.length > 2 || 'Name length should be greater than 2'
+      },
+      {
+        name: 'parts',
+        type: 'multiselect',
+        message: 'Select included parts',
+        choices: ['lib', 'api', 'types'],
+        initial: ['types']
       }
     ]);
     const answers = getAnswers();

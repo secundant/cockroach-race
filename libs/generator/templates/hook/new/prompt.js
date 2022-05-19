@@ -24,7 +24,7 @@ module.exports = {
 
           return name.startsWith('use') ? name : `use-${name}`;
         },
-        validate: value => value.length > 2 || 'Name length should be greater than 2'
+        validate: value => value.length > 1 || 'Name length should be greater than 1'
       }
     ]);
 
