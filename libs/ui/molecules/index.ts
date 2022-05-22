@@ -14,3 +14,11 @@ export { default as Popover } from './popover';
 // atomic:re-export:popover:types
 
 export type { PopoverProps } from './popover';
+// atomic:re-export:dialog
+// atomic:re-export:dialog:component
+
+export { default as Dialog } from './dialog';
+
+// atomic:re-export:dialog:types
+
+export type { DialogProps } from './dialog';

@@ -2,24 +2,26 @@ import { getElementTabIndex } from './get-tab-index';
 import { isTabbableElement } from './is-tabbable-element';
 
 export function getTabbableDescendants(node: HTMLElement) {
-  const elementsWithZeroTabIndex: Element[] = [];
-  const elementsGroupedByTabIndex: Element[][] = [];
+  // First item will contain zero tabIndexed element
+  const elementsByTabIndex = Array.from<HTMLElement>(
+    node.querySelectorAll(TABBABLE_SELECTOR)
+  ).reduce<Element[][]>((acc, element) => {
+    const index = getElementTabIndex(element);
 
-  Array.from<HTMLElement>(node.querySelectorAll(TABBABLE_SELECTOR)).forEach(element => {
-    const nodeTabIndex = getElementTabIndex(element);
-
-    if (nodeTabIndex < 0 || !isTabbableElement(element)) return;
-
-    if (nodeTabIndex === 0) {
-      elementsWithZeroTabIndex.push(element);
-    } else if (elementsGroupedByTabIndex[nodeTabIndex]) {
-      elementsGroupedByTabIndex[nodeTabIndex].push(element);
-    } else {
-      elementsGroupedByTabIndex[nodeTabIndex] = [element];
+    if (index >= 0 && isTabbableElement(element)) {
+      acc[index] = acc[index] || [];
+      acc[index].push(element);
     }
-  });
+    return acc;
+  }, []);
 
-  return elementsGroupedByTabIndex.flat().concat(elementsWithZeroTabIndex);
+  /**
+   * Ordering flow:
+   * [<button />, <button tabIndex="2" />, <button tabIndex="4" />, <button tabIndex="8" />] =>
+   * [[<button />, void, [<button tabIndex="2" />], void, [<button tabIndex="4" />], void, void, void, [<button tabIndex="8" />]] =>
+   * [<button tabIndex="2" />, <button tabIndex="4" />, <button tabIndex="8" />, <button /> ]
+   */
+  return elementsByTabIndex.slice(1).filter(Boolean).flat().concat(elementsByTabIndex[0]);
 }
 
 // Inspired by https://github.com/focus-trap/tabbable

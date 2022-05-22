@@ -39,7 +39,7 @@ export function createScrollLockSheet() {
         overflow: hidden !important;
         position: relative !important;
         padding-right: var(--removed-scroll-width) !important;
-  `)
+    }`)
   );
 
   head.appendChild(sheet);

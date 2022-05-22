@@ -22,7 +22,7 @@ module.exports = {
     {
       cwd,
       workspaceDependencies = [],
-      analyzer: { enabled, detailed } = {},
+      analyzer: { enabled, detailed, preventMinify } = {},
       logSettings,
       plugins = []
     },
@@ -62,10 +62,24 @@ module.exports = {
           ...(configuration.experimental ?? {})
         },
         webpack(config, options) {
+          if (enabled && !options.isServer && !options.dev) {
+            const StatoscopeWebpackPlugin = require('@statoscope/webpack-plugin').default;
+
+            config.plugins.push(
+              new StatoscopeWebpackPlugin({
+                saveReportTo: '.next/analyze/build-report.html',
+                saveStatsTo: '.next/analyze/build-stats.json',
+                open: 'file'
+              })
+            );
+          }
           if (enabled && detailed) {
             config.optimization.concatenateModules = false;
             config.optimization.moduleIds = 'named';
             config.optimization.chunkIds = 'named';
+          }
+          if (enabled && preventMinify) {
+            config.optimization.minimize = false;
           }
           return configuration.webpack ? configuration.webpack(config, options) : config;
         }

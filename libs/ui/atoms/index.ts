@@ -37,3 +37,11 @@ export { default as ListItem } from './list-item';
 // atomic:re-export:list-item:types
 
 export type { ListItemProps } from './list-item';
+// atomic:re-export:overlay-blur
+// atomic:re-export:overlay-blur:component
+
+export { default as OverlayBlur } from './overlay-blur';
+
+// atomic:re-export:overlay-blur:types
+
+export type { OverlayBlurProps } from './overlay-blur';

@@ -117,8 +117,10 @@ export const Popover = forwardRef(
             <Paper
               id={id}
               ref={paperForkRef}
+              // TODO Add shadow/rounded variants to Paper
+              rounded={false}
               className={clsx(
-                'overflow-x-hidden shadow-el-lg overflow-y-auto absolute outline-none bg-white/95 backdrop-blur-sm',
+                'overflow-x-hidden overflow-y-auto absolute outline-none bg-white/95 backdrop-blur-sm',
                 'min-w-[16px] min-h-[16px] max-w-[calc(100%-32px)] max-h-[calc(100%-32px)] rounded-lg',
                 className
               )}

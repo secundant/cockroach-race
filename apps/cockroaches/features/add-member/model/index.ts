@@ -7,7 +7,7 @@ export const addMemberClicked = createEvent<void>();
 const memberCreated = sample({
   fn: (): Cockroach => ({
     id: `item-${++id}`,
-    color: '#ff0000',
+    color: '',
     label: '',
     type: 'faster',
     age: 0

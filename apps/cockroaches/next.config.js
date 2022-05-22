@@ -22,7 +22,8 @@ module.exports = createNextConfig(
     workspaceDependencies: ['ui'],
     analyzer: {
       enabled: env.bool('ANALYZE'),
-      detailed: false
+      detailed: env.bool('ANALYZE_EXTENDED'),
+      preventMinify: env.bool('ANALYZE_EXTENDED')
     },
     plugins: [nextTranslate]
   },

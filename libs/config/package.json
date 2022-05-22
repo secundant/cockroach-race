@@ -41,5 +41,8 @@
     "next": {
       "optional": true
     }
+  },
+  "devDependencies": {
+    "@statoscope/webpack-plugin": "^5.20.1"
   }
 }

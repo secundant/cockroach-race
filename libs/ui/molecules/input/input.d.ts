@@ -4,7 +4,14 @@ export interface InputProps
   extends SharedHtmlAtomProps,
     Pick<
       PropsOf<'input'>,
-      'value' | 'onChange' | 'disabled' | 'type' | 'name' | 'placeholder' | 'autoComplete'
+      | 'value'
+      | 'onChange'
+      | 'disabled'
+      | 'type'
+      | 'name'
+      | 'placeholder'
+      | 'autoComplete'
+      | 'defaultValue'
     > {
   size?: InputSize;
   invalid?: boolean;

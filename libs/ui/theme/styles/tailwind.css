@@ -114,6 +114,11 @@
 }
 
 @layer utilities {
+  .absolute-center {
+    @apply absolute left-1/2 top-1/2;
+    transform: translate(-50%, -50%);
+  }
+
   .focus-ring {
     @apply outline outline-2 outline-offset-2 outline-accent-500;
   }

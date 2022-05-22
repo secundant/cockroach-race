@@ -18,10 +18,6 @@ export type { UseEventCallbackParams, UseEventCallbackResult } from './use-event
 // Exports: use-universal-layout-effect
 
 export { default as useUniversalLayoutEffect } from './use-universal-layout-effect';
-// Exports: use-portal
-
-export { default as usePortal } from './use-portal';
-export type { UsePortalParams, UsePortalResult } from './use-portal';
 
 // Exports: use-focus-return
 

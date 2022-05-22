@@ -50,8 +50,8 @@ module.exports = {
             13: '52px'
           },
           transitionDuration: {
-            'entering-screen': '225ms',
-            'leaving-screen': '195ms'
+            'entering-screen': '195ms',
+            'leaving-screen': '140ms'
           }
         }
       },

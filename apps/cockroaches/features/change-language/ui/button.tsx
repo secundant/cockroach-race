@@ -18,7 +18,7 @@ export const ChangeLanguageButton = memo(() => {
   return (
     <>
       <Button ref={ref} appearance="outline" onClick={() => setOpen(true)}>
-        {router.locale}
+        {langByName[router.locale as any].label}
       </Button>
       <Popover
         open={open}
@@ -34,13 +34,22 @@ export const ChangeLanguageButton = memo(() => {
           horizontal: 'center'
         }}
       >
-        <ListItem selected={router.locale === 'ru'} onClick={() => handleSelect('ru')}>
-          Русский
-        </ListItem>
-        <ListItem selected={router.locale === 'en'} onClick={() => handleSelect('en')}>
-          English
-        </ListItem>
+        {langs.map(lang => (
+          <ListItem
+            selected={router.locale === lang.name}
+            onClick={() => handleSelect(lang.name)}
+            key={lang.name}
+          >
+            {lang.label}
+          </ListItem>
+        ))}
       </Popover>
     </>
   );
 });
+
+const langs = [
+  { name: 'ru', label: 'Русский' },
+  { name: 'en', label: 'English' }
+] as const;
+const langByName = Object.fromEntries(langs.map(lang => [lang.name, lang]));

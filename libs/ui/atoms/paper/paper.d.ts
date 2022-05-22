@@ -3,4 +3,6 @@ import { ReactNode } from 'react';
 
 export interface PaperProps extends SharedHtmlAtomProps {
   children?: ReactNode;
+  rounded?: boolean;
+  shadowed?: boolean;
 }
