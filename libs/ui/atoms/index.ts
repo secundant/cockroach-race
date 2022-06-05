@@ -29,14 +29,14 @@ export { default as OverlayInvisible } from './overlay-invisible';
 // atomic:re-export:overlay-invisible:types
 
 export type { OverlayInvisibleProps } from './overlay-invisible';
-// atomic:re-export:list-item
-// atomic:re-export:list-item:component
+// atomic:re-export:list-box-item
+// atomic:re-export:list-box-item:component
 
-export { default as ListItem } from './list-item';
+export { default as ListBoxItem } from './list-box-item';
 
-// atomic:re-export:list-item:types
+// atomic:re-export:list-box-item:types
 
-export type { ListItemProps } from './list-item';
+export type { ListBoxItemProps } from './list-box-item';
 // atomic:re-export:overlay-blur
 // atomic:re-export:overlay-blur:component
 

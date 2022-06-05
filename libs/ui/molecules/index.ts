@@ -22,3 +22,11 @@ export { default as Dialog } from './dialog';
 // atomic:re-export:dialog:types
 
 export type { DialogProps } from './dialog';
+// atomic:re-export:list-box
+// atomic:re-export:list-box:component
+
+export { default as ListBox } from './list-box';
+
+// atomic:re-export:list-box:types
+
+export type { ListBoxProps } from './list-box';

@@ -1,4 +1,4 @@
-import { Icon, ListItem } from '../../atoms';
+import { Icon, ListBoxItem } from '../../atoms';
 import { useEventCallback, useId } from '../../hooks';
 import { Popover } from '../../molecules';
 import type { SelectProps, SelectValue } from './select.d';
@@ -117,13 +117,13 @@ export const Select = forwardRef(
           }
         >
           {data.map(item => (
-            <ListItem
+            <ListBoxItem
               key={item.value}
               onClick={() => handleSelect(item.value)}
               selected={item === selected}
             >
               {item.label}
-            </ListItem>
+            </ListBoxItem>
           ))}
         </Popover>
       </>

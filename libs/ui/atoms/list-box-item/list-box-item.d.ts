@@ -1,9 +1,11 @@
 import { PropsOf, SharedHtmlAtomProps } from '../../types';
 import { ReactNode } from 'react';
 
-export interface ListItemProps extends SharedHtmlAtomProps, Pick<PropsOf<'button'>, 'onClick'> {
+export interface ListBoxItemProps
+  extends SharedHtmlAtomProps,
+    Pick<PropsOf<'button'>, 'onClick' | 'onMouseDown' | 'onMouseEnter'> {
+  active?: boolean;
   children?: ReactNode;
   disabled?: boolean;
   selected?: boolean;
-  autoFocus?: boolean;
 }

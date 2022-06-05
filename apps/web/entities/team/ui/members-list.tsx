@@ -1,8 +1,9 @@
-import * as model from '../model';
 import { useEvent, useList, useStore } from 'effector-react';
 import useTranslation from 'next-translate/useTranslation';
 import { memo } from 'react';
-import { Icon, ListItem } from 'ui/atoms';
+import { Icon, ListBoxItem } from 'ui/atoms';
+
+import * as model from '../model';
 
 export const TeamMembersList = memo(() => {
   const handleSelect = useEvent(model.memberSelected);
@@ -12,14 +13,14 @@ export const TeamMembersList = memo(() => {
 
   const membersListNode = useList(model.$team, {
     fn: item => (
-      <ListItem
+      <ListBoxItem
         className="px-2 py-4"
         onClick={() => handleSelect(item.id)}
         selected={item.id === selectedId}
       >
         <Icon name={item.type} className="text-[60px] mr-10" style={{ color: item.color }} />
         <span>{item.label || 'Новый участник'}</span>
-      </ListItem>
+      </ListBoxItem>
     ),
     keys: [selectedId],
     getKey: item => item.id
