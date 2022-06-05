@@ -2,7 +2,7 @@ const { createJestBaseConfig } = require('./base');
 const { createJestTSPathsConfig } = require('./ts-paths');
 
 module.exports = {
-  createJestProjectConfig({ displayName, pathsRoot, targets, tsConfig }) {
+  createJestProjectConfig({ displayName, pathsRoot, targets, tsConfig, ...other }) {
     return {
       displayName,
       ...createJestBaseConfig({
@@ -12,7 +12,8 @@ module.exports = {
       ...createJestTSPathsConfig({
         tsConfig,
         target: pathsRoot
-      })
+      }),
+      ...other
     };
   }
 };

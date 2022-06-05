@@ -1,5 +1,7 @@
 import { Paper } from 'ui/atoms';
+
 import { MemberTypePreview, TeamMembersList } from '@/entities/team';
+
 import { AddMemberButton } from '@/features/add-member';
 import { AuthLogout } from '@/features/auth';
 import { ChangeLanguageButton } from '@/features/change-language';

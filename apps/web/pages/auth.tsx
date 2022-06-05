@@ -1,5 +1,6 @@
 import useTranslation from 'next-translate/useTranslation';
 import { Paper } from 'ui/atoms';
+
 import { AuthForm } from '@/features/auth';
 import { ChangeLanguageButton } from '@/features/change-language';
 

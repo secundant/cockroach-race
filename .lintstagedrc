@@ -1,9 +1,3 @@
 {
-  "*.{ts,tsx}": [
-    "prettier --write",
-    "eslint --cache --fix"
-  ],
-  "*.{json,js,graphql}": [
-    "prettier --write"
-  ]
+  "*": ["nx affected:lint --fix --files", "nx format:write --files"]
 }

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { memo, useRef, useState } from 'react';
-import { ListItem } from 'ui/atoms';
+import { ListBoxItem } from 'ui/atoms';
 import { useEventCallback } from 'ui/hooks';
 import { Button, Popover } from 'ui/molecules';
 
@@ -35,13 +35,13 @@ export const ChangeLanguageButton = memo(() => {
         }}
       >
         {langs.map(lang => (
-          <ListItem
+          <ListBoxItem
             selected={router.locale === lang.name}
             onClick={() => handleSelect(lang.name)}
             key={lang.name}
           >
             {lang.label}
-          </ListItem>
+          </ListBoxItem>
         ))}
       </Popover>
     </>

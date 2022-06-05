@@ -4,6 +4,8 @@
   "packageManager": "yarn@3.2.0",
   "scripts": {
     "storybook": "start-storybook -p 6006",
+    "test": "jest",
+    "check:ts": "tsc --noEmit",
     "g": "HYGEN_TMPLS=../generator/templates hygen",
     "g:ui": "yarn g atomic --root-dir .",
     "g:hook": "yarn g hook --root-dir hooks new",
@@ -12,6 +14,8 @@
   "dependencies": {
     "@fontsource/inter": "^4.5.5",
     "clsx": "^1.1.1",
+    "jest": "^28.1.0",
+    "jest-circus": "^28.1.0",
     "tailwindcss": "^3.0.23"
   },
   "peerDependencies": {
@@ -22,10 +26,12 @@
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/react": "^6.4.19",
+    "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.5",
     "@testing-library/react-hooks": "^8.0.0",
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.40",
+    "@types/testing-library__jest-dom": "^5",
     "config": "workspace:*",
     "generator": "workspace:*",
     "hygen": "^6.2.0"

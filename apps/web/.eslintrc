@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "../../.eslintrc.js",
+    "@feature-sliced/eslint-config/rules/import-order/experimental",
+    "@feature-sliced/eslint-config/rules/public-api",
+    "@feature-sliced/eslint-config/rules/layers-slices"
+  ]
+}
