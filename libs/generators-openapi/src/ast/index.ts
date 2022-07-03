@@ -1,0 +1,1 @@
+export { createDocumentAst } from './document';
