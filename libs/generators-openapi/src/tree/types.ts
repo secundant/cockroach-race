@@ -147,9 +147,9 @@ export type ParameterType = 'query' | 'path' | 'header' | 'cookie';
 
 export type SchemaCombinedType = 'allOf' | 'anyOf' | 'oneOf';
 
-export type SchemaType = PrimitiveSchemaType | 'enum' | 'array' | 'unknown';
+export type SchemaType = PrimitiveSchemaType | 'object' | 'enum' | 'array' | 'unknown';
 
-export type PrimitiveSchemaType = 'object' | 'string' | 'number' | 'integer' | 'boolean';
+export type PrimitiveSchemaType = 'string' | 'number' | 'integer' | 'boolean';
 
 export type ComponentType = Exclude<
   keyof Required<OpenAPIV3.ComponentsObject>,
